@@ -1,5 +1,5 @@
 /*
- * Using the Java language, have the function arith_geo(arr) take the array of numbers stored in arr 
+ * Using the Java language, have the function arith_geo_ii(arr) take the array of numbers stored in arr 
  * ...and return the string "Arithmetic" if the sequence follows an arithmetic pattern or 
  * ...return "Geometric" if it follows a geometric pattern. 
  * 
@@ -12,15 +12,14 @@
  * ...and no array will contain all the same elements. 
  */
 
-package arith_geo;
 
-import java.util.Scanner;
+package arith_geo_ii;
 
+import java.util.*;
 
-public class Arith_Geo {
+public class Arith_Geo_II {
 
-
-	public String arith_geo(int[] arr){
+	public String arith_geo_ii(int[] arr){
 		if (arr.length>=3){
 			if (!no_zero(arr) || !is_distinct(arr)){
 				return "Please make sure that your input array does not contain zeros and that each element is distinct.";
@@ -91,50 +90,18 @@ public class Arith_Geo {
 		return result;
 	}
 
-	
-
 	public static void main(String[] args) {
+
 		Scanner s = new Scanner(System.in);
-		Arith_Geo test = new Arith_Geo();
+		Arith_Geo_II test = new Arith_Geo_II();
 		
-		//Enter the int[] with ints separated by single space.
 		String [] items = s.nextLine().split(" ");
 		int [] array = new int[items.length];
 		for (int i = 0; i<items.length; i++){
 			array[i] = Integer.parseInt(items[i]);
 		}
-		
-		System.out.println(test.arith_geo(array));	
+		System.out.println(test.arith_geo_ii(array));
 		s.close();
-
 	}
 
 }
-
-
-/*What did I learn from this exercise?
- * 1. This is how you convert an ArrayList to a List:
- * 		ArrayList <Integer> list = new ArrayList<>();
- * 		Integer [] array = list.toArray( new Integer [list.size()]);
- * 	  The out put has to be an array to objects. In this case the it's an Array of Integer objects.
- * 
- * 2. When you println(array); you're going to print the address of that array: [I@2fad4242
- * 3. System.out.println(array.toString()); also only prints the address of the array: e.g. [I@2fad4242
- * 4. System.out.println(Arrays.toString(array)); prints the content: e.g. [1, 2, 3]
- * 
- * 5. To convert an Array of Strings to an int[], 
- * 		first, create an empty int[] with the length equal to the length of the String Array.
- * 			int[] array = new int[string_array.length];
- * 		then, use a for-loop to add each Integer.praseInt(string_array[i]) element to the int[].
- * 			int [] array = new int[items.length];
-			for (int i = 0; i<items.length; i++){
-				array[i] = Integer.parseInt(items[i]);
-			}
- * 
- * 6. Integer.parseInt(String s); returns an int.
- * 7. Integer.valueOf(int i); converts i to Integer.
- * 8. intValue(Integer integer); convert integer to int. 
- * 
- * Question:
- * 1. Why is it that when I import java.util.Arrays; Eclipse tells me that the import statement is redundant. 
-*/
