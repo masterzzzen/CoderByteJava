@@ -1,5 +1,5 @@
 /*
- * Using the Java language, have the function counting_minutes(str) take the str parameter 
+ * Using the Java language, have the function counting_minutesI(str) take the str parameter 
  * ...being passed which will be two times (each properly formatted with a colon and am or pm) 
  * ...separated by a hyphen and return the total number of minutes between the two times. 
  * 
@@ -10,13 +10,13 @@
 
 
 
-package counting_minutes;
+package counting_minutes_i;
 import java.util.Scanner;
 
 
-public class Counting_Minutes {
+public class Counting_Minutes_I {
 
-	public int counting_minutes(String str){
+	public int counting_minutes_i(String str){
 
 		int[] pair = convert(str);
 		return pair[1] - pair[0];
@@ -79,8 +79,8 @@ public class Counting_Minutes {
 	public static void main(String[] args) {
 
 	    Scanner  s = new Scanner(System.in);
-	    Counting_Minutes test = new Counting_Minutes();
-	    System.out.println(test.counting_minutes(s.nextLine()));
+	    Counting_Minutes_I test = new Counting_Minutes_I();
+	    System.out.println(test.counting_minutes_i(s.nextLine()));
 	    s.close();
 	}
 

@@ -15,8 +15,9 @@ import java.util.ArrayList;
 
 public class Prime_Time {
 
-	List<Double> quotients = new ArrayList<>();
+	
 	public String prime_time(int num){
+		List<Double> quotients = new ArrayList<>();
 		quotients = new ArrayList<>();
 		double temp = 0.0;
 
